@@ -53,7 +53,7 @@ export const login = async (req, res) => {
   const isNotValidInputs = await inputValidation(req.body);
   try {
     if (isNotValidInputs) {
-      return res.status(404).json({ success: false, msg: isNotValidInputs });
+      return res.status(400).json({ success: false, msg: isNotValidInputs });
     }
     const user = await User.findOne({ email });
     if (!user) {

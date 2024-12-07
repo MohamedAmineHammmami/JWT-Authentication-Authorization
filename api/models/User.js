@@ -10,7 +10,7 @@ const userSchema = new mongoose.Schema({
 
 export const inputValidation = async (data) => {
   const schema = Joi.object({
-    username: Joi.string().min(3).required(),
+    username: Joi.string().min(3),
     password: Joi.string().pattern(
       new RegExp(
         "^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8,}$"
